@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Data Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Display</h1>
+            <p>Real-time data from Google Sheets</p>
+        </header>
+        
+        <main>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading data...</p>
+            </div>
+            
+            <div id="error" class="error" style="display: none;">
+                <h3>Error Loading Data</h3>
+                <p id="error-message">Unable to fetch data. Please try again later.</p>
+                <button onclick="loadData()" class="retry-btn">Retry</button>
+            </div>
+            
+            <div id="data-container" class="data-container" style="display: none;">
+                <div class="table-wrapper">
+                    <table id="data-table" class="data-table">
+                        <thead id="table-header">
+                            <!-- Headers will be populated by JavaScript -->
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-info">
+                    <p>Last updated: <span id="last-updated">--</span></p>
+                    <p>Total rows: <span id="total-rows">0</span></p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Data sourced from Google Sheets</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
